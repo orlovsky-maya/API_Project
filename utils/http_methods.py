@@ -2,25 +2,31 @@ import requests
 
 
 class HttpMethods:
-    headers = {'Content-Type': 'application/json'}
-    cookie = ""
+    def __init__(self, logger):
+        self.headers = {'Content-Type': 'application/json'}
+        self.cookie = ""
+        self.logger = logger
 
-    @staticmethod
-    def get(url):
-        result = requests.get(url, headers=HttpMethods.headers, cookies=HttpMethods.cookie)
+    def get(self, url):
+        self.logger.add_request(url, method='GET')
+        result = requests.get(url, headers=self.headers, cookies=self.cookie)
+        self.logger.add_response(result)
         return result
 
-    @staticmethod
-    def post(url, body):
-        result = requests.post(url, json=body, headers=HttpMethods.headers, cookies=HttpMethods.cookie)
+    def post(self, url, body):
+        self.logger.add_request(url, method='POST')
+        result = requests.post(url, json=body, headers=self.headers, cookies=self.cookie)
+        self.logger.add_response(result)
         return result
 
-    @staticmethod
-    def put(url, body):
-        result = requests.put(url, json=body, headers=HttpMethods.headers, cookies=HttpMethods.cookie)
+    def put(self, url, body):
+        self.logger.add_request(url, method='PUT')
+        result = requests.put(url, json=body, headers=self.headers, cookies=self.cookie)
+        self.logger.add_response(result)
         return result
 
-    @staticmethod
-    def delete(url, body):
-        result = requests.delete(url, json=body, headers=HttpMethods.headers, cookies=HttpMethods.cookie)
+    def delete(self, url, body):
+        self.logger.add_request(url, method='DELETE')
+        result = requests.delete(url, json=body, headers=self.headers, cookies=self.cookie)
+        self.logger.add_response(result)
         return result
