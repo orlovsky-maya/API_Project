@@ -1,7 +1,10 @@
 from utils.api import GoogleMapsApi
 from utils.checking import Checking
+import allure
 
 
+@allure.epic("CRUD place")
+@allure.description("Create, read, update, delete location")
 def test_crud_place(logger):
     api = GoogleMapsApi(logger)
     print('Method POST')
