@@ -6,6 +6,13 @@ Python. API" course on Stepik educational platform.
 
 [Course](https://stepik.org/course/127716/info)
 
+Final API Project encompasses:
+
+- Working with the Requests library: sending requests, processing responses for API testing.
+- Using framework PyTest.
+- Connecting logging to the project.
+- Connecting Allure reports to the project.
+
 
 ## Results of run:
 
