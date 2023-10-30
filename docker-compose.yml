@@ -3,7 +3,7 @@ version: "3"
 services:
   test_runner:
     build: .
-    image: pytest_runner
+    image: orlovskymaya/pytest_runner_2
     container_name: pytest_runner_works
     volumes:
       - .:/test_project/
