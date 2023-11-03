@@ -1,9 +1,8 @@
 version: "3"
 
 services:
-  test_runner:
+  api_test_runner:
     build: .
-    image: orlovskymaya/pytest_runner_2
-    container_name: pytest_runner_works
+    container_name: pytest_runner_api
     volumes:
       - .:/test_project/

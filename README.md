@@ -34,3 +34,8 @@ alt="Running_Tests" height="300" width="950">
 
 </p>
 
+## Running the project
+
+In order to run from docker containers, use the commands: docker compose up / docker compose down. 
+
+To run on a local machine, use the command: ./run_pytest.sh
